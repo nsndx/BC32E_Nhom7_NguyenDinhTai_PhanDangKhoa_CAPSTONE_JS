@@ -741,6 +741,13 @@ footer .container img {
     left: 50%;
     transform: translateX(-50%);
   }
+  .products .container .row .col .card h3 {
+    width: auto;
+  }
+  .products .container .row .col .card p {
+    width: auto;
+    padding-right: 23px;
+  }
   .products .container .row .col .card a {
     width: 50%;
   }
