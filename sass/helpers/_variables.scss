@@ -1,0 +1,89 @@
+@import '../base/base';
+
+// reponsive
+$breakpoints: (
+    xl:1279px,
+    lg:992px,
+    md:768px,
+    sm:576px,
+);
+
+@mixin reponsive($screen) {
+    $value: map-get($map: $breakpoints, $key: $screen);
+
+    @media (max-width:$value) {
+        @content;
+    }
+}
+
+// color
+$color-dark-0: #000000;
+$color-dark-1: #030303;
+$color-dark-2: #140101;
+$color-dark-3: #1E1D1D;
+$color-light-0: #ffffff;
+$color-light-1: #F7F7F7;
+$color-light-2: #F8F8F8;
+$color-light-3: #CBC9C9;
+$color-light-4: #DEDDDC;
+$color-light-5: #FFFCFC;
+$color-light-6: #FFF8F8;
+$color-light-7: #cccccc;
+$color-light-8: #D9D9D9;
+$color-yellow-0: #F8B653;
+$color-yellow-1: #E1B067;
+$color-green-0: #1ED90E;
+$color-red-0: #FC0303;
+$color-red-1: #F50E0E;
+$color-violet-0: #AE18E2;
+
+// font size
+$fs-base: 16px;
+$fs-xs: 13px;
+$fs-xl-2: 20px;
+$fs-xl-2_1: 24px;
+$fs-xl-3: 30px;
+$fs-xl-4: 40px;
+
+// font weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// line-hight
+$lh-base: 19px;
+$lh-xl-2: 24px;
+$lh-xl-2_1: 29px;
+$lh-xl-3: 36px;
+$lh-xl-4: 48px;
+
+@mixin text($fs, $fw, $color, $lineHight) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    line-height: $lineHight;
+}
+@mixin textlink($fs, $fw, $color, $lineHight) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+    line-height: $lineHight;
+    text-decoration: none;
+}
+
+@mixin position($position, $width, $hight, $top:auto, $right:auto, $bottom:auto, $left:auto) {
+    position: $position;
+    width: $width;
+    height: $hight;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin  positiondefault() {
+    position: static;
+    width: auto;
+    height: auto;
+}

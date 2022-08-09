@@ -1,0 +1,116 @@
+@import '../components/components';
+
+
+header {
+    background-color: $color-dark-0;
+
+    .container {
+        @include position(relative, auto, 50px);
+
+        .logo {
+            a {
+                img {
+                    @include position(absolute, 116px, 32px, 10px, auto, auto, 24px)
+                }
+            }
+        }
+
+        .content {
+            .component1 {
+                @include position(absolute, 66px, 36px, 6px, auto, auto, 1027px);
+                cursor: pointer;
+                img {
+                    @include position(absolute, 31px, 31px, 8.33%, 53.03%, 5.56%, 0)
+                }
+
+                span {
+                    @include position(absolute, auto, auto, 0, 0, 0, 46.97%);
+                    @include text($fs-xl-3, $fw-light, $color-light-0, $lh-xl-3)
+                }
+            }
+
+            a {
+                @include textlink($fs-base, $fw-light, $color-light-1, $lh-base);
+                @include position(absolute, 91px, 32px, 15px, auto, auto, auto);
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            .login {
+                left: 1103px;
+            }
+
+            .register {
+                left: 1170px;
+            }
+        }
+    }
+
+}
+
+@include reponsive(xl) {
+    header {
+        .container {
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logo {
+                a {
+                    img {
+                        @include positiondefault;
+                    }
+                }
+            }
+
+            .content {
+                display: flex;
+                align-items: center;
+
+                .component1 {
+                    @include positiondefault;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        @include positiondefault;
+                    }
+
+                    span {
+                        @include positiondefault;
+                    }
+                }
+
+                a {
+                    @include positiondefault;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include reponsive(sm) {
+    header {
+        .container {
+            .content {
+                .component1 {
+                    margin-left: 10px;
+                    img {
+                        width: 20px;
+                    }
+
+                    span {
+                        @include positiondefault;
+                        font-size: $fs-base
+                    }
+                }
+
+                a {
+                    margin-left: 10px;
+                    font-size: $fs-xs;
+                }
+            }
+        }
+    }
+}

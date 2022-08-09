@@ -1,0 +1,213 @@
+@import '../layouts/header';
+@import '../layouts/menu';
+@import'../layouts/footer';
+@import'../layouts/products';
+
+//detail
+.detail {
+    .container {
+        @include position(relative, auto, 530px);
+
+        .row {
+            .col-left {
+                .img {
+                    @include position(absolute, 334px, 355px, 58px, auto, auto, 65px);
+                    background-color: $color-light-2;
+
+                    img {
+                        @include position(absolute, 220px, 220px, 60px, auto, auto, 57px);
+                    }
+                }
+            }
+
+            .col-right {
+                h1 {
+                    @include position(absolute, 503px, 36px, 67px, auto, auto, 527px);
+                    @include text($fs-xl-3, $fw-light, $color-dark-0, $lh-xl-3)
+                }
+
+                p {
+                    @include position(absolute, 503px, 90px, 112px, auto, auto, 527px);
+                    @include text($fs-base, $fw-regular, $color-dark-2, $lh-base)
+                }
+
+                h3 {
+                    @include position(absolute, 162px, 58px, 210px, auto, auto, 527px);
+                    @include text($fs-xl-2_1, $fw-medium, $color-green-0, $lh-xl-2_1)
+                }
+
+                .button-size {
+                    button {
+                        @include text($fs-xl-2_1, $fw-semibold, $color-dark-3, $lh-xl-2_1);
+                        @include position(absolute, 50px, 50px, 250px, auto, auto, auto);
+                        background-color: $color-light-7;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    @for $i from 0 to 7 {
+                        .size#{($i+1)} {
+                            left: 526px + 71px*($i);
+                        }
+                    }
+                }
+
+                h4 {
+                    @include position(absolute, 113px, 47px, 317px, auto, auto, 527px);
+                    @include text($fs-xl-3, $fw-semibold, $color-red-0, $lh-xl-3)
+                }
+
+                .button-amount {
+                    button {
+                        @include text($fs-xl-3, $fw-regular, $color-light-5, $lh-xl-3);
+                        @include position(absolute, 50px, 50px, 370px, auto, auto, auto);
+                        background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    .button-plus {
+                        left: 527px;
+                    }
+
+                    .button-minus {
+                        left: 636px;
+                    }
+
+                    span {
+                        @include text($fs-xl-3, $fw-regular, $color-dark-0, $lh-xl-3);
+                        @include position(absolute, 14px, 36px, 377px, auto, auto, 597px);
+                    }
+                }
+
+                .button-add {
+                    button {
+                        @include text($fs-xl-2_1, $fw-medium, $color-light-6, $lh-xl-2_1);
+                        @include position(absolute, 175px, 64px, 427px, auto, auto, 527px);
+                        background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include reponsive(xl) {
+    .detail {
+        .container {
+            @include reponsive(sm) {
+                height: auto;
+            }
+
+            .row {
+                height: 100%;
+                display: flex;
+                padding: 30px 15px;
+                align-items: center;
+                flex-wrap: wrap;
+
+                .col-left {
+                    width: 434px;
+                    padding: 0 50px;
+
+                    @include reponsive(lg) {
+                        width: 100%;
+                    }
+
+                    @include reponsive(md) {
+                        padding: 0 !important;
+                    }
+
+                    .img {
+                        position: static;
+                        padding-top: 50px;
+
+                        @include reponsive(lg) {
+                            width: auto;
+                            height: auto;
+                            padding: 10px 0;
+                        }
+
+                        img {
+                            position: static;
+                            display: block;
+                            margin: auto;
+                        }
+                    }
+                }
+
+                .col-right {
+                    flex: 1;
+                    padding: 0 50px;
+
+                    @include reponsive(lg) {
+                        width: 100%;
+                    }
+
+                    @include reponsive(md) {
+                        padding: 0 !important;
+                    }
+
+                    h1 {
+                        @include positiondefault;
+                    }
+
+                    p {
+                        @include positiondefault;
+                        margin-top: 10px
+                    }
+
+                    h3 {
+                        @include positiondefault;
+                        margin: 10px 0;
+                    }
+
+                    .button-size {
+                        button {
+                            position: static;
+                            margin: 5px 10px 5px 0;
+                        }
+                    }
+
+                    h4 {
+                        @include positiondefault;
+                        margin: 10px 0;
+
+                        @include reponsive(lg) {
+                            display: inline-block;
+                        }
+                    }
+
+                    .button-amount {
+                        @include reponsive(lg) {
+                            display: inline-block;
+                            margin: 0 20px;
+                        }
+
+                        button {
+                            position: static
+                        }
+
+                        span {
+                            position: static;
+                            margin: 0 10px;
+                        }
+                    }
+
+                    .button-add {
+                        @include reponsive(lg) {
+                            display: inline-block;
+                        }
+
+                        button {
+                            position: static;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

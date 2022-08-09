@@ -1,0 +1,69 @@
+@import '../helpers/variables';
+
+.btn-carousel {
+    @include textlink($fs-xl-2, $fw-light, $color-light-0, 50px);
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: $color-yellow-0;
+    text-align: center;
+}
+
+.btn-product {
+    @include textlink($fs-xl-2_1, $fw-light, $color-dark-0, 64px);
+    display: inline-block;
+    width: 175px;
+    height: 64px;
+    background-color: $color-yellow-1;
+    text-align: center;
+}
+
+.input-register {
+    @include position(relative, 482px, 51px);
+
+    @include reponsive(sm) {
+        height: 40px !important;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 5px;
+        background-color: $color-violet-0;
+
+        @include reponsive(md) {
+            height: 2px;
+        }
+        @include reponsive(sm) {
+            height: 1px;
+        }
+    }
+
+    input {
+        @include text($fs-xl-3, $fw-regular, $color-dark-0, $lh-xl-3);
+        width: 100%;
+        border: none;
+        outline: none;
+        z-index: 1;
+        position: relative;
+        background: transparent;
+        &::placeholder {
+            color: $color-dark-0;
+        }
+
+        @include reponsive(sm) {
+            font-size: $fs-xl-2;
+        }
+    }
+
+    span {
+        position: absolute;
+        right: 0;
+        top: 17.65%;
+        @include text($fs-xl-2, $fw-regular, $color-red-1, $lh-xl-2);
+        text-align: end;
+    }
+}

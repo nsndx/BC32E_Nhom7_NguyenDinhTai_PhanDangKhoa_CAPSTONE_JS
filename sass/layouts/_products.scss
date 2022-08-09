@@ -1,0 +1,100 @@
+@import '../components/components';
+
+.products {
+    padding: 30px 0;
+
+    .container {
+        padding: 0 15px;
+
+        .title {
+            padding-bottom: 30px;
+
+            h1 {
+                text-align: center;
+                @include text($fs-xl-4, $fw-regular, $color-dark-0, $lh-xl-4);
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+
+            .col {
+                width: calc(100%/3);
+
+                @include reponsive(xl) {
+                    width: 50%;
+                }
+
+                @include reponsive(md) {
+                    width: 100%;
+                }
+
+                .card {
+                    @include position(relative, 334px, 400px);
+                    background-color: $color-light-2;
+                    margin: 30px auto;
+
+                    img {
+                        @include position(absolute, 220px, 220px, 0, auto, auto, 57px)
+                    }
+
+                    h3 {
+                        @include position(absolute, 288px, auto, 200px, auto, auto, 23px);
+                        @include text($fs-xl-2_1, $fw-light, $color-dark-0, $lh-xl-2_1)
+                    }
+
+                    p {
+                        @include position(absolute, 288px, auto, 260px, auto, auto, 23px);
+                        @include text($fs-xl-2, $fw-light, $color-light-3, $lh-xl-2);
+                    }
+
+                    a {
+                        @extend .btn-product;
+                        @include position(absolute, 175px, 64px, auto, auto, 0, 0);
+                    }
+
+                    span {
+                        @include position(absolute, 160px, 64px, auto, auto, 0, 174px);
+                        @include text($fs-xl-2_1, $fw-semibold, $color-dark-0, 64px);
+                        background-color: $color-light-4;
+                        text-align: center;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include reponsive(sm) {
+    .products {
+        .container {
+            .title{
+                h1{
+                    font-size: $fs-xl-3;
+                }
+            }
+            .row{
+                .col{
+                    .card{
+                        width: 100%;
+                        img{
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        a{
+                            width: 50%;
+                        }
+                        span{
+                            width: 50%;
+                            display: inline-block;
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

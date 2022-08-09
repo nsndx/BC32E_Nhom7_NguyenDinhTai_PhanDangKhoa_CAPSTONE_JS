@@ -1,0 +1,80 @@
+@import '../components/components';
+
+.menu {
+    .container {
+        @include position(relative, auto, 50px);
+
+        a {
+            @include textlink($fs-xl-2, $fw-light, $color-dark-0, $lh-xl-2);
+            @include position(absolute, auto, 24px, 16px, auto, auto, auto);
+        }
+
+        .home {
+            width: 56px;
+            left: 25px;
+            font-weight: $fw-regular;
+
+        }
+
+        .men {
+            width: 41px;
+            left: 105px;
+            opacity: 0.7;
+        }
+
+        .woman {
+            width: 70px;
+            left: 183px;
+            opacity: 0.7;
+        }
+
+        .kid {
+            width: 31px;
+            left: 292px;
+        }
+
+        .sport {
+            width: 52px;
+            left: 363px;
+        }
+
+        .active {
+            @include position(absolute, 60px, 0, 50px, auto, auto, 24px);
+            border: 1px solid $color-dark-0;
+        }
+    }
+}
+
+@include reponsive(xl) {
+    .menu {
+        .container {
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+
+            a {
+                @include positiondefault;
+                margin-right: 30px
+            }
+
+            .active {
+                left: 15px;
+            }
+        }
+    }
+}
+
+@include reponsive(sm) {
+    .menu {
+        .container {
+            a {
+                margin-right: 10px;
+                font-size: $fs-xs;
+            }
+
+            .active {
+                width: 40px;
+            }
+        }
+    }
+}
