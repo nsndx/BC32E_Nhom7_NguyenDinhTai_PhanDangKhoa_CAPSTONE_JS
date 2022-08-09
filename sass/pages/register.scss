@@ -1,0 +1,189 @@
+@import '../layouts/header';
+@import '../layouts/menu';
+@import'../layouts/footer';
+
+//register
+.register {
+    .container {
+        @include position(relative, auto, 538px);
+
+        .title {
+            padding: 30px 0;
+
+            h1 {
+                @include text($fs-xl-4, $fw-regular, $color-dark-0, $lh-xl-4);
+                text-align: center;
+            }
+        }
+
+        .row {
+
+            .col-left {
+
+                .input {
+                    @extend .input-register;
+                    @include position(absolute, 482px, 51px, auto, auto, auto, 120px)
+                }
+
+                @for $i from 0 to 3 {
+                    .input#{($i+1)} {
+                        top: 140px + 78px*($i);
+                    }
+                }
+            }
+
+            .col-right {
+                .input {
+                    @extend .input-register;
+                    @include position(absolute, 482px, 51px, auto, auto, auto, 701px)
+                }
+
+                @for $i from 0 to 2 {
+                    .input#{($i+1)} {
+                        top: 140px + 78px*($i);
+                    }
+                }
+
+                .gender {
+                    @include position(absolute, 482px, 51px, 320px, auto, auto, 701px);
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        position: absolute;
+                        top: -10px;
+                        color: $color-red-1;
+                        font-size:$fs-xs;
+                    }
+
+                    label {
+                        @include text($fs-xl-3, $fw-regular, $color-dark-0, $lh-xl-3)
+                    }
+
+                    input[type='radio'] {
+                        /* remove standard background appearance */
+                        appearance: none;
+                        /* create custom radiobutton appearance */
+                        display: inline-block;
+                        width: 65px;
+                        height: 50px;
+                        border-radius: 50%;
+                        padding: 0;
+                        /* background-color only for content */
+                        border: 10px solid $color-light-8;
+                        background-color: $color-light-8;
+
+                        &:checked {
+                            background-color: $color-violet-0;
+                        }
+
+                        cursor: pointer;
+                        margin: 0 10px 0 30px;
+                    }
+                }
+
+                button {
+                    @include text($fs-xl-3, $fw-regular, $color-light-5, $lh-xl-3);
+                    @include position(absolute, 291px, 50px, calc(50% - 50px/2 + 204px), auto, auto, calc(50% - 291px/2 + 206.5px));
+                    text-align: center;
+                    background-color: $color-violet-0;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@include reponsive(xl) {
+    .register {
+        .container {
+            @include reponsive(lg) {
+                padding: 0 100px;
+                padding-bottom: 50px !important;
+                height: auto;
+            }
+
+            @include reponsive(md) {
+                padding: 0 50px;
+            }
+
+            @include reponsive(sm) {
+                padding: 0 15px;
+            }
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+
+                .col-left {
+                    width: 50%;
+                    padding: 0 30px;
+
+                    @include reponsive(lg) {
+                        width: 100%;
+                        padding: 0;
+                    }
+
+                    .input {
+                        @include position(relative, auto, 51px);
+                        margin-top: 30px;
+                    }
+                }
+
+                .col-right {
+                    width: 50%;
+                    padding: 0 30px;
+
+                    @include reponsive(lg) {
+                        width: 100%;
+                        padding: 0;
+                    }
+
+                    .input {
+                        @include position(relative, auto, 51px);
+                        margin-top: 30px;
+                    }
+
+                    .gender {
+                        @include position(relative, auto, 51px);
+                        margin: 50px 0;
+
+                        @include reponsive(sm) {
+                            font-size: $fs-xl-2;
+                            margin: 30px 0
+                        }
+
+                        label {
+                            @include reponsive(sm) {
+                                font-size: $fs-xl-2;
+                            }
+                        }
+
+                        input[type='radio'] {
+                            width: 25px;
+                            height: 25px;
+                            border-width: 5px;
+
+                            @include reponsive(sm) {
+                                margin: 0 5px 0 10px;
+                            }
+
+                            &:checked {
+                                background-color: $color-violet-0;
+                            }
+                        }
+                    }
+
+                    button {
+                        @include position(relative, 291px, 50px);
+
+                        @include reponsive(sm) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
